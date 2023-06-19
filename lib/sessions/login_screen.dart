@@ -86,8 +86,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         Navigator.pushNamed(context, MapView.id);
                       }
                     } catch (e) {
+
                       Fluttertoast.showToast(
-                          msg: "Register First",
+                          msg: "Invalid username or password",
                           toastLength: Toast.LENGTH_SHORT,
                           gravity: ToastGravity.BOTTOM,
                           timeInSecForIosWeb: 1,

@@ -302,27 +302,27 @@ class _MapViewState extends State<MapView> {
   }
 
   // Create the polylines for showing the route between two places
-  _createPolylines(
-    double startLatitude,
-    double startLongitude,
-    double destinationLatitude,
-    double destinationLongitude,
-  ) async {
-    polylinePoints = PolylinePoints();
-    PolylineResult result = await polylinePoints.getRouteBetweenCoordinates(
-      Secrets.apikey, // Google Maps API Key
-      PointLatLng(startLatitude, startLongitude),
-      PointLatLng(destinationLatitude, destinationLongitude),
-      travelMode: TravelMode.driving,
-    );
-    print(result);
-    if (result.points.isNotEmpty) {
-      for (var point in result.points) {
-        polylineCoordinates.add(LatLng(point.latitude, point.longitude));
-      }
-    }
-    _setOfPolylinesPoints(polylineCoordinates);
-  }
+  // _createPolylines(
+  //   double startLatitude,
+  //   double startLongitude,
+  //   double destinationLatitude,
+  //   double destinationLongitude,
+  // ) async {
+  //   polylinePoints = PolylinePoints();
+  //   PolylineResult result = await polylinePoints.getRouteBetweenCoordinates(
+  //     Secrets.apikey, // Google Maps API Key
+  //     PointLatLng(startLatitude, startLongitude),
+  //     PointLatLng(destinationLatitude, destinationLongitude),
+  //     travelMode: TravelMode.driving,
+  //   );
+  //   print(result);
+  //   if (result.points.isNotEmpty) {
+  //     for (var point in result.points) {
+  //       polylineCoordinates.add(LatLng(point.latitude, point.longitude));
+  //     }
+  //   }
+  //   _setOfPolylinesPoints(polylineCoordinates);
+  // }
   //
 
   _setOfPolylinesPoints(List<LatLng> myPolylineCoordinates) {
@@ -372,7 +372,7 @@ class _MapViewState extends State<MapView> {
       );
       // setState(() {});
       if (locationService.s.isNotEmpty) {
-        print(locationService.s);
+        // print(locationService.s);
         // for (var element in locationService.s) {
         //   print(element);
         // }
